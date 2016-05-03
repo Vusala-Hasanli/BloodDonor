@@ -1,41 +1,5 @@
-$brand-primary: #ab3327;
-$brand-success: #DB563A;
-$gray-lighter: lighten(#EC8A87, 93.5%);
-$main-fonts: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$baldy: 700;
-$a-tags: 'a, a:active, a:hover, a:focus, a.active';
-$a-tags-hover: 'a:active, a:hover';
-
-
-@mixin upbald(){
-        text-transform: uppercase;
-        font-weight: $baldy;
-}
-@mixin trans($t...) {
-        -webkit-transition: $t;
-        -moz-transition: $t;
-        -ms-transition: $t;
-        transition: $t;
-}
-@mixin bk-txt($bk, $txt){
-        background: $bk;
-        color: $txt;
-}
-@mixin timelinemedia($x, $y, $padding, $padding2) {
-
-        min-height: $x;
-        .timeline-panel {
-                padding: $padding;
-        }
-        .timeline-image {
-                width: $x;
-                height: $x;
-                margin-left: $y;
-        }
-        &.timeline-inverted > .timeline-panel {
-                padding: $padding2;
-        }
-}
+@import "variables.scss";
+@import "mixins.scss";
 body {
         overflow-x: hidden;
         font-family: $main-fonts;
@@ -847,4 +811,187 @@ footer {
                 -moz-transform: scale(1);
                 transform: scale(1);
         }
+}
+
+/*Login page*/
+
+.login-page {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+
+        background: $brand-primary;
+
+        text-align: center;
+        color: #fff;
+
+        padding: 3em;
+
+        h1 {
+                font-weight: 300;
+                small {
+                        color: rgba(255,255,255,0.7);
+                }
+        }
+
+        .form-group {
+                padding: 8px 0 0;
+        }
+
+        .form-content {
+                padding: 40px 0 0;
+        }
+
+}
+.user-avatar {
+        width: 125px;
+        height: 125px;
+}
+.input-underline{
+        background:0 0;border:none;box-shadow:none;border-bottom:2px solid rgba(255,255,255,.4);color:#fff;border-radius:0;
+}
+.input-underline::-moz-placeholder{
+        color:rgba(255,255,255,.7)}.input-underline::-ms-input-placeholder{color:rgba(255,255,255,.7);
+        }
+.input-underline::-webkit-input-placeholder{color:rgba(255,255,255,.7);}
+.input-underline:focus{border-bottom:2px solid #fff;box-shadow:none;}
+
+.login {
+        padding: 0;
+        min-height: 100vh;
+        nav{
+                text-align:center;
+                margin: 0 auto;
+        }
+        ul {
+                list-style: none;
+        }
+        .center-pills {
+    display: flex;
+    justify-content: center;
+}
+}
+
+
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
 }

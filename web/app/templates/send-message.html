@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <form name="sendMessage" id="contactForm" ng-submit="form.submitForm(sendMessage.$valid)" novalidate>
+                <form name="sendMessage" action="ContactForm" id="contactForm" ng-submit="form.submitForm(sendMessage.$valid)" novalidate>
                     <div class="row">
                         <div class="col-md-6">
                             <fieldset class="form-group controls" ng-class="{'has-error' : sendMessage.fullname.$invalid && !sendMessage.fullname.$pristine }">

@@ -1,0 +1,30 @@
+
+@mixin upbald(){
+        text-transform: uppercase;
+        font-weight: 700;
+}
+@mixin trans($t...) {
+        -webkit-transition: $t;
+        -moz-transition: $t;
+        -ms-transition: $t;
+        transition: $t;
+}
+@mixin bk-txt($bk, $txt){
+        background: $bk;
+        color: $txt;
+}
+@mixin timelinemedia($x, $y, $padding, $padding2) {
+
+        min-height: $x;
+        .timeline-panel {
+                padding: $padding;
+        }
+        .timeline-image {
+                width: $x;
+                height: $x;
+                margin-left: $y;
+        }
+        &.timeline-inverted > .timeline-panel {
+                padding: $padding2;
+        }
+}
